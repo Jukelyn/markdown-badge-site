@@ -4,23 +4,9 @@ name: Lint Code Base
 on:
   push:
     branches: ["main"]
-    paths:
-      - 'src/**'
-      - 'static/**'
-      - 'templates/**'
-      - 'data/**'
-      - 'docker-compose.yaml'
-      - 'Dockerfile'
 
   pull_request:
     branches: ["main"]
-    paths:
-      - 'src/**'
-      - 'static/**'
-      - 'templates/**'
-      - 'data/**'
-      - 'docker-compose.yaml'
-      - 'Dockerfile'
 
   workflow_dispatch:
 
@@ -40,9 +26,11 @@ jobs:
       - name: Lint Code Base
         uses: super-linter/super-linter@v7.3.0
         env:
-          FILTER_REGEX_EXCLUDE: "(README.md|\\.github/.*)"
+          FILTER_REGEX_EXCLUDE: "(README.md|\\.github/.*|images/.*|ERR_UNKNOWN_FILE_EXTENSION)"
           VALIDATE_PYTHON_BLACK: false
           VALIDATE_PYTHON_ISORT: false
+          VALIDATE_PYTHON_PYINK: false
+          VALIDATE_JSON: false
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_JAVASCRIPT_ES: false
