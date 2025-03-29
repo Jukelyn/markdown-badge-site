@@ -35,7 +35,7 @@ def get_readme(url: str = URL) -> str:
         requests.exceptions.RequestException: If the HTTP request fails.
     """
     try:
-        response = requests.get(url, stream=True)
+        response = requests.get(url, stream=True, timeout=10)
         response.raise_for_status()  # Check for HTTP errors
 
         with open(MARKDOWN_FILE, 'wb') as file:
