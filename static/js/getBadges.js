@@ -1,5 +1,3 @@
-// static/js/badges.js
-
 const selectedBadges = []; // Array to store selected badges
 const tbodyEl = document.querySelector("#selectedBadgesTable tbody");
 const selectedBadgesTextarea = document.querySelector("#selectedBadges");
@@ -9,11 +7,11 @@ function toggleCheckbox(row) {
   const checkbox = row.querySelector('input[type="checkbox"]');
   const badgeName = row.getAttribute("data-badge-name");
   const badgeURL = row.getAttribute("data-badge-url");
+  const rowIndex = Array.from(row.parentNode.children).indexOf(row); // Get the index of the row
 
-  // Add or remove the badge from the selectedBadges array
   if (checkbox.checked) {
-    // Add the badge to the array (preserve order of selection)
-    selectedBadges.push({ badgeName, badgeURL });
+    // Add the badge to the array (preserve row index for order)
+    selectedBadges.push({ badgeName, badgeURL, rowIndex });
   } else {
     // Remove the badge from the array if unchecked
     const index = selectedBadges.findIndex(
@@ -23,6 +21,9 @@ function toggleCheckbox(row) {
       selectedBadges.splice(index, 1);
     }
   }
+
+  // Sort the selectedBadges array by the row index to maintain the order
+  selectedBadges.sort((a, b) => a.rowIndex - b.rowIndex);
 
   // Update content
   updateContent();
@@ -69,7 +70,6 @@ function copyToClipboard() {
       alert("Failed to copy content: " + error);
     });
 }
-
 
 const copyButton = document.getElementById("copyButton");
 copyButton.addEventListener("click", copyToClipboard);
