@@ -101,11 +101,20 @@ def save_to_json(data: list, file_name: str = 'data/badges.json') -> None:
     """
 
     try:
+        filtered_data = [
+            entry for entry in data if entry.get('badge', '').strip()]
+
+        sorted_data = sorted(filtered_data, key=lambda x: x['badge'].lower())
+
         with open(file_name, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=4)
+            json.dump(sorted_data, f, indent=4)
+
         logger.info("Data successfully saved to %s", file_name)
     except IOError as e:
         logger.error("Error saving to JSON file: %s", e)
+    except KeyError as e:
+        logger.error(
+            "'badge' key not found in one or more data entries: %s", e)
 
 
 if __name__ == "__main__":
