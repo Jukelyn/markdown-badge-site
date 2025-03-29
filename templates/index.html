@@ -15,6 +15,13 @@
   <button id="copyButton">Copy to Clipboard</button>
 </div>
 
+<div id="popupModal" class="modal">
+  <div class="modal-content">
+    <h3>Content copied to clipboard!</h3>
+    <button id="closeModal">Close</button>
+  </div>
+</div>
+
 <h2>All Badges</h2>
 <div class="badgeContainer">
   <table class="myTable" id="badgeTable">
@@ -34,7 +41,11 @@
       >
         <td>
           <label class="container">
-            <input name="selectBadge" type="checkbox" value="{{ item.badge }}">
+            <input
+              name="selectBadge"
+              type="checkbox"
+              value="{{ item.badge }}"
+            />
             <div class="checkmark"></div>
           </label>
         </td>
