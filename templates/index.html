@@ -33,7 +33,10 @@
         data-badge-url="{{ item.badgeURL }}"
       >
         <td>
-          <input type="checkbox" name="selectBadge" value="{{ item.badge }}" />
+          <label class="container">
+            <input name="selectBadge" type="checkbox" value="{{ item.badge }}">
+            <div class="checkmark"></div>
+          </label>
         </td>
         <td>{{ item.badge }}</td>
         <td>

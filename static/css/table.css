@@ -18,11 +18,18 @@
     background-color: #3f3f3f;
 }
 
-.myTable td:first-child, .myTable th:first-child {
-    width: 50px;
-    text-align: center;
-}
-
 .myTable tr:hover {
     background-color: #444;
+}
+
+.myTable td:first-child {
+    text-align: center;
+    padding: 0;
+}
+
+.myTable td:first-child .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
