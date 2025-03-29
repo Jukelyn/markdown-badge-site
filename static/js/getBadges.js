@@ -42,7 +42,12 @@ function updateContent() {
   selectedBadges.forEach((item) => {
     const row = `
       <tr>
-        <td><input type="checkbox" checked disabled /></td>
+        <td>
+          <label class="container">
+            <input name="selectBadge" type="checkbox" value="{{ item.badge }}" checked>
+            <div class="checkmark"></div>
+          </label>
+        </td>
         <td>${item.badgeName}</td>
         <td><img src="${item.badgeURL}" loading="lazy" alt="${item.badgeName}" /></td>
         <td><a href="${item.badgeURL}" target="_blank">${item.badgeURL}</a></td>
@@ -59,17 +64,3 @@ badgeTable.addEventListener("click", function (e) {
     toggleCheckbox(row);
   }
 });
-
-function copyToClipboard() {
-  navigator.clipboard
-    .writeText(selectedBadgesTextarea.value)
-    .then(() => {
-      alert("Content copied to clipboard!");
-    })
-    .catch((error) => {
-      alert("Failed to copy content: " + error);
-    });
-}
-
-const copyButton = document.getElementById("copyButton");
-copyButton.addEventListener("click", copyToClipboard);
