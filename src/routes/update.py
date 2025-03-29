@@ -8,7 +8,8 @@ import src.parse_md as parse
 
 
 def update_route(app: Flask):
-    """_summary_
+    """
+    Registers the update route of the application.
 
     Args:
         app (Flask): _description_
@@ -16,7 +17,11 @@ def update_route(app: Flask):
 
     @app.route("/update", methods=["POST"])
     def update():
-        """Updates the badge data."""
+        """
+        Handles requests to the `/update` route.
+
+        If the request method is POST it updates the badge data.
+        """
 
         file = parse.get_readme()
         badges = parse.parse_markdown_tables(file)
