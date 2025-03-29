@@ -107,7 +107,8 @@ def save_to_json(data: list, file_name: str = 'data/badges.json') -> None:
         sorted_data = sorted(filtered_data, key=lambda x: x['badge'].lower())
 
         with open(file_name, 'w', encoding='utf-8') as f:
-            json.dump(sorted_data, f, indent=4)
+            json.dump(sorted_data, f, indent=2)
+            f.write('\n')
 
         logger.info("Data successfully saved to %s", file_name)
     except IOError as e:
