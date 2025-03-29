@@ -2,12 +2,11 @@
 """
 This endpoint re-downloads the README file and re-creates the badge data.
 """
-import flask as Flask
 from flask import render_template
 import src.parse_md as parse
 
 
-def update_route(app: Flask):
+def update_route(app):
     """
     Registers the update route of the application.
 

@@ -17,7 +17,7 @@ def get_time(timezone: str = "US/Eastern") -> str:
 
     tz = pytz.timezone(timezone)
 
-    current_time = datetime.now(tz)
-    current_time = current_time.strftime("%l:%M %p %B %d, %Y").strip()
+    current_time_dt: datetime = datetime.now(tz)
+    current_time: str = current_time_dt.strftime("%l:%M %p %B %d, %Y").strip()
 
     return current_time
