@@ -1,4 +1,4 @@
-""" Runs the Flask App."""
+"""Runs the Flask App."""
 from src import app
 
 if __name__ == "__main__":
