@@ -7,7 +7,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser appuser
+RUN groupadd -g 1000 appuser && useradd -u 1000 -g appuser appuser \
+    && mkdir -p /app/data \
+    && chown -R appuser:appuser /app/data
+
 USER appuser
 
 EXPOSE 5000
