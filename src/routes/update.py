@@ -2,7 +2,7 @@
 """
 This endpoint re-downloads the README file and re-creates the badge data.
 """
-from flask import render_template
+from flask import redirect, url_for
 import src.parse_md as parse
 
 
@@ -14,10 +14,10 @@ def update_route(app):
         app (Flask): _description_
     """
 
-    @app.route("/update", methods=["POST"])
-    def update():
+    @app.route("/update_list", methods=["POST"])
+    def update_list():
         """
-        Handles requests to the `/update` route.
+        Handles requests to the `/update_list` route.
 
         If the request method is POST it updates the badge data.
         """
@@ -26,4 +26,4 @@ def update_route(app):
         badges = parse.parse_markdown_tables(file)
         parse.save_to_json(badges)
 
-        return render_template("index.html")
+        return redirect(url_for('index'))

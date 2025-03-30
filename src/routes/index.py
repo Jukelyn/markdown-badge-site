@@ -2,9 +2,20 @@
 """This module provides the route for the index page."""
 import json
 from flask import render_template
-from src.utils import timestamp
 
 DATA_PATH = "data/badges.json"
+
+
+def get_last_updated_time() -> None:
+    """
+    Gets the last updated time information.
+
+    Returns:
+        (None): This function does not return a value.
+    """
+
+    with open("data/last_updated.txt", "r", encoding="utf-8") as f:
+        return f.read().strip()
 
 
 def index_route(app):
@@ -24,8 +35,6 @@ def index_route(app):
         with open(DATA_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        print(data)
-        current_time = timestamp.get_time()
         return render_template("index.html",
                                data=data,
-                               currentTime=current_time)
+                               currentTime=get_last_updated_time())

@@ -8,6 +8,7 @@ import logging
 import requests
 import markdown
 from bs4 import BeautifulSoup
+from src.utils import timestamp
 
 logging.basicConfig(level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -97,7 +98,7 @@ def save_to_json(data: list, file_name: str = 'data/badges.json') -> None:
         file_name (str, optional): The filename. Defaults to 'badges.json'.
 
     Returns:
-        (None): This function creates (or overwrites) the `file_name` file.
+        (None): This function does not return a value.
     """
 
     try:
@@ -116,6 +117,13 @@ def save_to_json(data: list, file_name: str = 'data/badges.json') -> None:
     except KeyError as e:
         logger.error(
             "'badge' key not found in one or more data entries: %s", e)
+
+    current_time = timestamp.get_time()
+
+    with open("data/last_updated.txt", "w", encoding="utf-8") as f:
+        f.write(current_time)
+
+    logger.info("File updated at %s", current_time)
 
 
 if __name__ == "__main__":
