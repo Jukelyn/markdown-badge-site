@@ -11,7 +11,7 @@ def update_route(app):
     Registers the update route of the application.
 
     Args:
-        app (Flask): _description_
+        app (Flask): The Flask application instance.
     """
 
     @app.route("/update_list", methods=["POST"])

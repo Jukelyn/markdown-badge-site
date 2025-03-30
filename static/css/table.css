@@ -33,3 +33,8 @@
     align-items: center;
     height: 100%;
 }
+
+.customizeTable th:first-child, .customizeTable td:first-child {
+    width: auto;  /* Allow the column to expand based on its content */
+    padding: 10px; /* Add padding of 10px */
+}

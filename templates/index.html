@@ -1,12 +1,12 @@
 {% extends 'base.html' %} {% block body %}
 <h1>Markdown Badges</h1>
 <h2>List was updated on: {{ currentTime }}</h2>
+
 <form action="/update_list" method="post">
   <div class="button-container">
     <button type="submit">Update list</button>
   </div>
 </form>
-
 
 <div class="textarea-container">
   <textarea
@@ -20,6 +20,7 @@
 
 <div class="button-container">
   <button id="copyButton">Copy to Clipboard</button>
+  <button id="checkButton" style="display: none;">Customize Badges</button>
 </div>
 
 <div id="popupModal" class="modal">
@@ -90,6 +91,7 @@
   </table>
 </div>
 
+<script src="{{ url_for('static', filename='js/checkTextarea.js')}}"></script>
 <script src="{{ url_for('static', filename='js/copyToClipboard.js')}}"></script>
 <script src="{{ url_for('static', filename='js/getBadges.js')}}"></script>
 

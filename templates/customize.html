@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block body %}
+<h1>Customize Badges</h1>
+
+<h2>Badges:</h2>
+<div id="badge-container" class="badgeContainer">
+    <table id="badge-table" class="myTable customizeTable">
+        <thead>
+            <tr class="thead">
+                <th>Badge Name</th>
+                <!-- The color columns will be added dynamically -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+</div>
+
+
+<script src="{{ url_for('static', filename='js/customize.js')}}"></script>
+
+{% endblock %}
