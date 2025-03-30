@@ -19,6 +19,9 @@
   >
     Copy to Clipboard
   </button>
+  <button id="clearButton" style="display: none" onclick="clearTextarea()">
+    Clear
+  </button>
 </div>
 
 <div id="popupModal" class="modal">
@@ -43,6 +46,7 @@
   </table>
 </div>
 
+<script src="{{ url_for('static', filename='js/clearTextarea.js')}}"></script>
 <script src="{{ url_for('static', filename='js/customize.js')}}"></script>
 <script src="{{ url_for('static', filename='js/getCustomBadges.js')}}"></script>
 <script src="{{ url_for('static', filename='js/copyToClipboard.js')}}"></script>

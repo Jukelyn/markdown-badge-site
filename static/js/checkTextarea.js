@@ -1,11 +1,13 @@
 function checkTextareaContent() {
   const textarea = document.getElementById("selectedBadges");
 
-  if (textarea.value.trim() !== "") {
-    document.getElementById("checkButton").style.display = "inline-block";
-  } else {
+  if (textarea.value.trim() == "") {
     console.log("The textarea is empty");
+    document.getElementById("copyButton").style.display = "none";
     document.getElementById("checkButton").style.display = "none";
+  } else {
+    document.getElementById("copyButton").style.display = "inline-block";
+    document.getElementById("checkButton").style.display = "inline-block";
   }
 }
 
@@ -20,7 +22,7 @@ setInterval(() => {
     previousContent = currentContent;
     checkTextareaContent();
   }
-}, 500); // Polling every 500ms
+}, 200); // Polling every 200ms
 
 document
   .getElementById("checkButton")
