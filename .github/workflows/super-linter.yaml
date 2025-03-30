@@ -27,7 +27,6 @@ jobs:
         uses: super-linter/super-linter@v7.3.0
         env:
           FILTER_REGEX_EXCLUDE: "(README.md|\\.github/.*|images/.*|ERR_UNKNOWN_FILE_EXTENSION)"
-          LOG_LEVEL: DEBUG
           VALIDATE_PYTHON_BLACK: false
           VALIDATE_PYTHON_ISORT: false
           VALIDATE_PYTHON_PYINK: false
