@@ -1,3 +1,4 @@
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 function copyToClipboard(targetTextareaId: string): void {
   const textarea = document.getElementById(targetTextareaId) as HTMLTextAreaElement;
   if (textarea && textarea.value) {

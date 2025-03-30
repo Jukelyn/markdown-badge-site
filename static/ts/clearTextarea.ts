@@ -1,3 +1,4 @@
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 function clearTextarea(): void {
   const textarea = document.getElementById(
     "customizedBadges"

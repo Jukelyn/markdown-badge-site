@@ -10,4 +10,3 @@
   "include": ["static/ts/**/*"],
   "exclude": ["node_modules"]
 }
-
