@@ -4,19 +4,22 @@ document.querySelectorAll("#badge-table td").forEach((cell) => {
     const textarea = document.getElementById("customizedBadges");
     const img = this.querySelector("img");
     const imgUrl = img.src;
+    const altText = img.alt;
 
     // Toggle the highlight on the clicked cell
     this.classList.toggle("highlight");
 
+    const formattedUrl = `![${altText}](${imgUrl})`;
+
     // Add or remove the URL from the textarea based on the highlight
     if (this.classList.contains("highlight")) {
-      if (!textarea.value.includes(imgUrl)) {
-        textarea.value += imgUrl + "\n";
+      if (!textarea.value.includes(formattedUrl)) {
+        textarea.value += formattedUrl + "\n";
       }
     } else {
       textarea.value = textarea.value
         .split("\n")
-        .filter((url) => url !== imgUrl)
+        .filter((url) => url !== formattedUrl)
         .join("\n");
     }
 

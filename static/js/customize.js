@@ -1,7 +1,8 @@
 // Define the color options
 const colors = [
-  "aqua",
   "black",
+  "white",
+  "aqua",
   "blue",
   "fuchsia",
   "gray",
