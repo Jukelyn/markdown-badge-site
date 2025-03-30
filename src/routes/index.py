@@ -6,12 +6,12 @@ from flask import render_template
 DATA_PATH = "data/badges.json"
 
 
-def get_last_updated_time() -> None:
+def get_last_updated_time() -> str:
     """
     Gets the last updated time information.
 
     Returns:
-        (None): This function does not return a value.
+        (str): The last update time of the list.
     """
 
     with open("data/last_updated.txt", "r", encoding="utf-8") as f:
