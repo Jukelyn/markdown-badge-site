@@ -1,8 +1,8 @@
-function copyToClipboard() {
-  const selectedBadgesTextarea = document.getElementById("selectedBadges");
-  if (selectedBadgesTextarea.value) {
+function copyToClipboard(targetTextareaId) {
+  const textarea = document.getElementById(targetTextareaId);
+  if (textarea && textarea.value) {
     navigator.clipboard
-      .writeText(selectedBadgesTextarea.value)
+      .writeText(textarea.value)
       .then(() => {
         console.log("Content copied to clipboard!");
         showModal();
@@ -26,6 +26,3 @@ function showModal() {
     modal.style.display = "none";
   }, 3000);
 }
-
-const copyButton = document.getElementById("copyButton");
-copyButton.addEventListener("click", copyToClipboard);

@@ -17,14 +17,11 @@ const colors = [
   "yellow",
 ];
 
-// Retrieve the badge data from localStorage
 const badgeData = localStorage.getItem("badgeData");
 
 if (badgeData) {
-  // Split the badge data by newlines (or another delimiter, if needed)
-  const badgeList = badgeData.split("\n"); // This assumes each badge is separated by a newline character
+  const badgeList = badgeData.split("\n");
 
-  // Get the table body and header from the HTML file
   const tableBody = document
     .getElementById("badge-table")
     .getElementsByTagName("tbody")[0];
@@ -35,7 +32,7 @@ if (badgeData) {
   // Add color columns to the header dynamically
   colors.forEach((color) => {
     const headerColor = document.createElement("th");
-    headerColor.textContent = color.charAt(0).toUpperCase() + color.slice(1); // Capitalize the color name
+    headerColor.textContent = color.charAt(0).toUpperCase() + color.slice(1);
     headerRow.appendChild(headerColor);
   });
 
