@@ -2,7 +2,7 @@
 document.querySelectorAll("#badge-table td").forEach((cell) => {
   cell.addEventListener("click", function (this: HTMLTableCellElement) {
     const textarea = document.getElementById(
-      "customizedBadges"
+      "customizedBadges",
     ) as HTMLTextAreaElement;
     const img = this.querySelector("img") as HTMLImageElement;
     const imgUrl = img.src;
@@ -33,7 +33,7 @@ document.querySelectorAll("#badge-table td").forEach((cell) => {
 // Function to check textarea content and display the button
 function checkTextareaEmpty(): void {
   const textarea = document.getElementById(
-    "customizedBadges"
+    "customizedBadges",
   ) as HTMLTextAreaElement;
 
   const copyButton = document.getElementById("copyButton") as HTMLElement;

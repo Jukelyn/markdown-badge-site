@@ -6,16 +6,16 @@ interface SelectedBadge {
 
 const selectedBadges: SelectedBadge[] = []; // Array to store selected badges
 const tbodyEl = document.querySelector(
-  "#selectedBadgesTable tbody"
+  "#selectedBadgesTable tbody",
 ) as HTMLTableSectionElement;
 const selectedBadgesTextarea = document.querySelector(
-  "#selectedBadges"
+  "#selectedBadges",
 ) as HTMLTextAreaElement;
 
 // Function to handle checkbox click and update the selected badges
 function toggleCheckbox(row: HTMLElement): void {
   const checkbox = row.querySelector(
-    'input[type="checkbox"]'
+    'input[type="checkbox"]',
   ) as HTMLInputElement;
   const badgeName = row.getAttribute("data-badge-name")!;
   const badgeURL = row.getAttribute("data-badge-url")!;
@@ -28,7 +28,7 @@ function toggleCheckbox(row: HTMLElement): void {
   } else {
     // Remove the badge from the array if unchecked
     const index = selectedBadges.findIndex(
-      (item) => item.badgeURL === badgeURL
+      (item) => item.badgeURL === badgeURL,
     );
     if (index !== -1) {
       selectedBadges.splice(index, 1);

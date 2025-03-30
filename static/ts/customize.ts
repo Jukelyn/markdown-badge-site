@@ -55,7 +55,7 @@ if (badgeData) {
       colors.forEach((color) => {
         const urlWithColor = match[2].replace(
           /&logoColor=[^&]*/,
-          `&logoColor=${color}`
+          `&logoColor=${color}`,
         );
 
         const colorCell = document.createElement("td");

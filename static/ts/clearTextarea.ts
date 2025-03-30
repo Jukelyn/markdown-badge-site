@@ -1,7 +1,7 @@
 /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 function clearTextarea(): void {
   const textarea = document.getElementById(
-    "customizedBadges"
+    "customizedBadges",
   ) as HTMLTextAreaElement;
   const clearButton = document.getElementById("clearButton") as HTMLElement;
   const copyButton = document.getElementById("copyButton") as HTMLElement;
@@ -15,7 +15,7 @@ function clearTextarea(): void {
 
 function checkTextareaChange(): void {
   const textarea = document.getElementById(
-    "customizedBadges"
+    "customizedBadges",
   ) as HTMLTextAreaElement;
   const currentContent = textarea.value.trim();
 
@@ -31,7 +31,7 @@ function checkTextareaChange(): void {
 let previousContentString: string = "";
 setInterval(() => {
   const textarea = document.getElementById(
-    "customizedBadges"
+    "customizedBadges",
   ) as HTMLTextAreaElement;
   const currentContent = textarea.value.trim();
 

@@ -1,6 +1,6 @@
 function checkTextareaContent(): void {
   const textarea = document.getElementById(
-    "selectedBadges"
+    "selectedBadges",
   ) as HTMLTextAreaElement;
 
   if (textarea.value.trim() === "") {
@@ -20,7 +20,7 @@ function checkTextareaContent(): void {
 let previousContentStr: string = "";
 setInterval(() => {
   const textarea = document.getElementById(
-    "selectedBadges"
+    "selectedBadges",
   ) as HTMLTextAreaElement;
   const currentContent = textarea.value.trim();
 
@@ -36,7 +36,7 @@ document
   .getElementById("customizeButton")!
   .addEventListener("click", async function () {
     const textarea = document.getElementById(
-      "selectedBadges"
+      "selectedBadges",
     ) as HTMLTextAreaElement;
     const data = textarea.value.trim();
 
