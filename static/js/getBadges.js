@@ -33,7 +33,7 @@ function toggleCheckbox(row) {
 function updateContent() {
   // Update the textarea with selected badge URLs in order of selection
   selectedBadgesTextarea.value = selectedBadges
-    .map((item) => item.badgeURL)
+    .map((item) => `![${item.badgeName}](${item.badgeURL})`)
     .join("\n");
 
   // Update the selected badges table
